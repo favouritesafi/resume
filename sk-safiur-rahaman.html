@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue and Orange Divisions on White Background</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Arial, sans-serif; /* Added font-family for better readability */
+  }
+  .coloredDivision {
+    position: fixed; /* Fixes the position */
+    top: 0;
+    transition: width 0.5s, height 0.5s; /* Adding transition effect */
+    display: flex; /* Added for centering text */
+    align-items: center; /* Added for centering text */
+    justify-content: center; /* Added for centering text */
+    color: white; /* Added for better contrast */
+    font-size: 1.5em; /* Added font size for better visibility */
+  }
+  #blueDivision {
+    background-color: blue;
+    width: 30%; /* Changed to 30% */
+    height: 100vh; /* 100% of viewport height */
+    left: 0;
+    z-index: 2; /* Ensure blue division is above orange */
+    border-top-right-radius: 400px; /* Adjusted the radius */
+    border-bottom-right-radius: 400px; /* Adjusted the radius */
+    position: relative; /* Added position relative for absolute positioning of photo holder */
+  }
+  #photoHolder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; /* Makes the holder circular */
+    overflow: hidden; /* Hides overflow content outside the circle */
+    border: 2px solid white; /* Optional: Add border */
+  }
+  #photoHolder img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .orangeDivision {
+    width: 35%; /* Changed to 35% */
+    height: 10vh; /* 10% of viewport height */
+    left: 0; /* Positioning to left */
+    z-index: 1; /* Ensure orange division is behind blue */
+    border-top-right-radius: 400px; /* Adjusted the radius */
+    border-bottom-right-radius: 400px; /* Adjusted the radius */
+  }
+  .orangeDivision:hover {
+    width: 100%; /* Expand width to 100% on hover */
+  }
+  #orange1Division { top: 0; background-color: orange; } /* Positioning for orange1 at top */
+  #orange2Division { top: 10vh; background-color: #ff9900; } /* Positioning for orange2 */
+  #orange3Division { top: 20vh; background-color: #ffaa00; } /* Positioning for orange3 */
+  #orange4Division { top: 30vh; background-color: #ffbb00; } /* Positioning for orange4 */
+  #orange5Division { top: 40vh; background-color: #ffcc00; } /* Positioning for orange5 */
+  #orange6Division { top: 50vh; background-color: #ffdd00; } /* Positioning for orange6 */
+  #orange7Division { top: 60vh; background-color: #ffee00; } /* Positioning for orange7 */
+  #orange8Division { top: 70vh; background-color: #ffff00; } /* Positioning for orange8 */
+  #orange9Division { top: 80vh; background-color: #ffff80; } /* Positioning for orange9 */
+  #orange10Division { top: 90vh; background-color: darkgreen; } /* Positioning for orange10 */
+</style>
+</head>
+<body>
+  <div id="blueDivision" class="coloredDivision">
+    <div id="photoHolder">
+      <img src="C:\Users\sksraham\Downloads\hiring.gif" alt="Profile Picture">
+    </div>
+  </div>
+  <div id="orange1Division" class="coloredDivision orangeDivision">Orange1 Division</div>
+  <div id="orange2Division" class="coloredDivision orangeDivision">Orange2 Division</div>
+  <div id="orange3Division" class="coloredDivision orangeDivision">Orange3 Division</div>
+  <div id="orange4Division" class="coloredDivision orangeDivision">Orange4 Division</div>
+  <div id="orange5Division" class="coloredDivision orangeDivision">Orange5 Division</div>
+  <div id="orange6Division" class="coloredDivision orangeDivision">Orange6 Division</div>
+  <div id="orange7Division" class="coloredDivision orangeDivision">Orange7 Division</div>
+  <div id="orange8Division" class="coloredDivision orangeDivision">Orange8 Division</div>
+  <div id="orange9Division" class="coloredDivision orangeDivision">Orange9 Division</div>
+  <div id="orange10Division" class="coloredDivision orangeDivision">Orange10 Division</div>
+</body>
+</html>
