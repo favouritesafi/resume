@@ -21,7 +21,6 @@
     justify-content: center; /* Added for centering text */
     color: white; /* Added for better contrast */
     font-size: 1.5em; /* Added font size for better visibility */
-    text-align: right; /* Align text to the right */
   }
   #blueDivision {
     background-color: blue;
@@ -54,6 +53,7 @@
     z-index: 1; /* Ensure ribbon division is behind blue */
     border-top-right-radius: 400px; /* Adjusted the radius */
     border-bottom-right-radius: 400px; /* Adjusted the radius */
+    text-align: right; /* Align text to the right */
   }
   .ribbonDivision:hover {
     width: 100%; /* Expand width to 100% on hover */
@@ -73,14 +73,14 @@
 <body>
   <div id="blueDivision" class="coloredDivision">
     <div id="photoHolder">
-      <img src="\Media\Pictures\Safiur_Photo.jpg" alt="Profile Picture">
+      <img src="Media/Pictures/Safiur_Photo.jpg" alt="Profile Picture">
     </div>
   </div>
   <div id="ribbon1" class="coloredDivision ribbonDivision">ribbon1 Division</div>
   <div id="ribbon2" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Check Change</div>
   <div id="ribbon3" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Change 2</div>
   <div id="ribbon4" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Change 3</div>
-  <div id="ribbon5" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon5</div>
+  <div id="ribbon5" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Change 4</div>
   <div id="ribbon6" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon6</div>
   <div id="ribbon7" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon7</div>
   <div id="ribbon8" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon8</div>
