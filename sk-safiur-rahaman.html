@@ -75,40 +75,20 @@
     </div>
   </div>
   <div id="ribbon1" class="coloredDivision ribbonDivision">ribbon1 Division</div>
-  <div id="ribbon2" class="coloredDivision ribbonDivision" onclick="changeBGColor2()">Check Change</div>
-  <div id="ribbon3" class="coloredDivision ribbonDivision" onclick="changeBGColor3()">ribbon3</div>
-  <div id="ribbon4" class="coloredDivision ribbonDivision" onclick="changeBGColor4()">ribbon4</div>
-  <div id="ribbon5" class="coloredDivision ribbonDivision" onclick="changeBGColor5()">ribbon5</div>
-  <div id="ribbon6" class="coloredDivision ribbonDivision" onclick="changeBGColor6()">ribbon6</div>
-  <div id="ribbon7" class="coloredDivision ribbonDivision" onclick="changeBGColor7()">ribbon7</div>
-  <div id="ribbon8" class="coloredDivision ribbonDivision" onclick="changeBGColor8()">ribbon8</div>
-  <div id="ribbon9" class="coloredDivision ribbonDivision" onclick="changeBGColor9()">ribbon9</div>
+  <div id="ribbon2" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Check Change</div>
+  <div id="ribbon3" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon3</div>
+  <div id="ribbon4" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon4</div>
+  <div id="ribbon5" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon5</div>
+  <div id="ribbon6" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon6</div>
+  <div id="ribbon7" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon7</div>
+  <div id="ribbon8" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon8</div>
+  <div id="ribbon9" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon9</div>
   <div id="ribbon10" class="coloredDivision ribbonDivision">ribbon10</div>
 
   <script>
-    function changeBGColor2() {
-      document.body.style.backgroundColor = '#ff9900';
-    }
-    function changeBGColor3() {
-      document.body.style.backgroundColor = '#ffaa00';
-    }
-    function changeBGColor4() {
-      document.body.style.backgroundColor = '#ffbb00';
-    }
-    function changeBGColor5() {
-      document.body.style.backgroundColor = '#ffcc00';
-    }
-    function changeBGColor6() {
-      document.body.style.backgroundColor = '#ffdd00';
-    }
-    function changeBGColor7() {
-      document.body.style.backgroundColor = '#ffee00';
-    }
-    function changeBGColor8() {
-      document.body.style.backgroundColor = '#ffff00';
-    }
-    function changeBGColor9() {
-      document.body.style.backgroundColor = '#ffff80';
+    function changeBGColor2(element) {
+      var bgColor = window.getComputedStyle(element).backgroundColor;
+      document.body.style.backgroundColor = bgColor;
     }
   </script>
 </body>
