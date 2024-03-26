@@ -91,8 +91,12 @@
 	text-align: center;
 	transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
   }
+  .summaries {
+  display: none; /* Hide the rightText division initially */
+  }
+  
   #upper:hover {
-    text-shadow: 0 0 10px white; /* Glow effect on hover */
+    text-shadow: 0 0 10px blue; /* Glow effect on hover */
   }
   /* Style for the second right-aligned text */
   .lclass {
@@ -100,15 +104,68 @@
     font-family: Arial, sans-serif; /* Changed font to Arial */
   }
   
-  #d1{
+  #r1d{
     height: 60vh;
 	text-align: left;
-	display: none; /* Hide the rightText division initially */
-  }
+	  }
+	  
   ul.b {list-style-type: circle;}
+  
+  .clock {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+	  z-index: 3;
+	  position: absolute;
+    }
+
+    .time-unit {
+      position: relative;
+      width: 20px; /* Adjust width as needed */
+      height: 100vh; /* Adjust height as needed */
+      margin: 0 5px; /* Adjust margin as needed */
+	  border-bottom-right-radius: 100px; /* Rounded corner for bottom right */
+      border-bottom-left-radius: 100px; /* Rounded corner for bottom left */
+    }
+
+    .hour {
+      background-color: orange;
+    }
+
+    .minute {
+      background-color: red;
+    }
+
+    .second {
+      background-color: green;
+    }
+
+    .time-value {
+      position: absolute;
+      bottom: -40px; /* Adjust bottom position as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px; /* Adjust font size as needed */
+      color: #333;
+      text-align: center; /* Align time values center */
+    }
+	
 </style>
 </head>
 <body>
+
+<div class="clock">
+    <div class="time-unit hour">
+      <div class="time-value" id="hourValue"></div>
+    </div>
+    <div class="time-unit minute">
+      <div class="time-value" id="minuteValue"></div>
+    </div>
+    <div class="time-unit second">
+      <div class="time-value" id="secondValue"></div>
+    </div>
+  </div>
+  
   <div id="initial" class="coloredDivision">
     <div id="photoHolder">
       <img src="Media/Pictures/DSC_6960 Edited_1.jpg" alt="Profile Picture" onclick="decreaseSize()">
@@ -121,16 +178,29 @@
   <div id="r4" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 4</div>
   <div id="r5" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 5</div>
   <div id="r6" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 6</div>
-  <div id="r7" class="coloredDivision rDivision">I here by declare that all the information furnished above is true to the best of my knowledge and belief</div>
+  <div id="r7" class="coloredDivision rDivision">I here by declare that all the information furnished above is true to the best of my knowledge and belief.</div>
 
   <!-- Right-aligned text -->
   <div id="rightText" class="details">
 	<div id="upper">Sk Safiur Rahaman</div>
     <div id="mid-lower" class="lclass">SAP Lead Technical Consultant</div>
-    <div id="lower" class="lclass"></div>
+    <div id="lower" class="lclass">ABAP on HANA and ABAP Cloud</div>
   </div>
-  <div id="d1" class="details">
+  <div id="r1d" class="details summaries">
 	<div id="u1">Professional Summary</div>
+    <div id="ml1" class="lclass">Test</div>
+    <div id="l1" class="lclass"><ul class="a">
+  <li>10+ years of experience in SAP technical consulting (ABAP on HANA and ABAP Cloud).</li>
+  <li>Currently working at Capgemini (India), Kolkata, as Manager.</li>
+  <li>Woking on the BTP solutions and fully Fiori Launchpad based business process (Private and Public Cloud).</li>
+  <li>Experienced in S4 HANA Green-field Implementation, Blue-field Implementation, Brown-field Implementations and Support Projects.</li>
+  <li>Motivated team player with sound understanding of the IT industry and willing to accept exciting challenges.</li>
+  <li>Looking forward to meet new challenges in technical as well as functional domain. Very much excited to explore new possibilities for SAP solutions.</li>
+  <li>Good team spirit & willingness to learn new things. Responsible, punctual, committed to work.</li>
+</ul></div>
+  </div>
+    <div id="r2d" class="details summaries">
+	<div id="u1">Skillsets & Certifications</div>
     <div id="ml1" class="lclass">Test</div>
     <div id="l1" class="lclass"><ul class="a">
   <li>10+ years of experience in SAP technical consulting (ABAP on HANA and ABAP Cloud).</li>
@@ -157,15 +227,38 @@
 	document.getElementById('photoHolder').style.left = "50%";
 	document.getElementById('initial-back').style.width = "32%";
 	document.getElementById('rightText').style.opacity = "0.2";
-	document.getElementById('d1').style.left = "35%";
+	document.getElementById('r1d').style.left = "35%";
 	document.getElementById('r1').style.width = "100%";
 	document.getElementById('r7').style.width = "100%";
-	var rightText = document.getElementById('d1');
+	var rightText = document.getElementById('r1d');
 	rightText.style.display = "block";
             
     var initialDiv = document.getElementById('initial');
     initialDiv.style.width = '30%';
     }
+	
+	    function updateTime() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Display the time values
+      document.getElementById('hourValue').textContent = hours;
+      document.getElementById('minuteValue').textContent = minutes;
+      document.getElementById('secondValue').textContent = seconds;
+
+      // Adjust the height of each time unit
+      document.querySelector('.hour').style.height = (hours * 15) + 'px'; // Assuming maximum 24 hours
+      document.querySelector('.minute').style.height = (minutes * 6) + 'px'; // Assuming maximum 60 minutes
+      document.querySelector('.second').style.height = (seconds * 6) + 'px'; // Assuming maximum 60 seconds
+    }
+
+    // Update the time every second
+    setInterval(updateTime, 1000);
+
+    // Initial call to display the time immediately
+    updateTime();
   </script>
 </body>
 </html>
