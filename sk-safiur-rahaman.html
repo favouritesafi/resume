@@ -4,34 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sk Safiur Rahaman</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
   body {
     margin: 0;
     padding: 0;
     background-color: white;
-    font-family: Arial, sans-serif; /* Added font-family for better readability */
+    font-family: 'Arial', cursive; /* Added font-family for better readability */
+	display: flex; /* Added for centering text */
   }
   .coloredDivision {
     position: fixed; /* Fixes the position */
     top: 0;
-    transition: width 0.5s, height 0.5s; /* Adding transition effect */
-    display: flex; /* Added for centering text */
+    transition: width 1s, height 1s; /* Adding transition effect */
     align-items: center; /* Added for centering text */
     justify-content: center; /* Added for centering text */
     color: white; /* Added for better contrast */
-    font-size: 1.5em; /* Added font size for better visibility */
+    font-size: 1.2em; /* Added font size for better visibility */
   }
-  #blueDivision {
-    background-color: blue;
-    width: 30%; /* Changed to 30% */
+  #initial {
+    background-color: white;
+    width: 50%; /* Full width of the viewport */
     height: 100vh; /* 100% of viewport height */
     left: 0;
-    z-index: 2; /* Ensure blue division is above ribbon */
-    border-top-right-radius: 400px; /* Adjusted the radius */
-    border-bottom-right-radius: 400px; /* Adjusted the radius */
+    border-top-right-radius: 450px; /* Adjusted the radius */
+    border-bottom-right-radius: 450px; /* Adjusted the radius */
+    z-index: 2; /* Ensure blue division is above r */
     position: relative; /* Added position relative for absolute positioning of photo holder */
   }
+  #initial-back { background-color: #14184a;
+    width: 51%; /* Full width of the viewport */
+    height: 100vh; /* 100% of viewport height */
+    border-top-right-radius: 350px; /* Adjusted the radius */
+    border-bottom-right-radius: 350px; /* Adjusted the radius */
+    z-index: 1; /* Ensure blue division is above r */
+	transition: width 3s, height 3s; /* Adding transition effect */
+	}
   #photoHolder {
     position: absolute;
     top: 50%;
@@ -46,51 +54,117 @@
     width: 100%;
     height: auto;
   }
-  .ribbonDivision {
-    width: 35%; /* Changed to 35% */
+  .rDivision {
+    width: 33%; /* Changed to 35% */
     height: 10vh; /* 10% of viewport height */
     left: 0; /* Positioning to left */
-    z-index: 1; /* Ensure ribbon division is behind blue */
+    z-index: 1; /* Ensure r division is behind blue */
     border-top-right-radius: 400px; /* Adjusted the radius */
     border-bottom-right-radius: 400px; /* Adjusted the radius */
+    display: flex; /* Added for centering text */
+    align-items: right-aligned; /* Added for centering text */
     text-align: right; /* Align text to the right */
+    color: #14184a;
   }
-  .ribbonDivision:hover {
-    width: 100%; /* Expand width to 100% on hover */
+  .rDivision:not(#r1):hover {
+    width: 55%; /* Expand width to 100% on hover */
+  } 
+  #r1 { top: 0; background-color: #ebf0fa; } /* Positioning for r1 at top */
+  #r2 { top: 15vh; background-color: #d6e0f5; } /* Positioning for r2 */
+  #r3 { top: 30vh; background-color: #adc2eb; } /* Positioning for r3 */
+  #r4 { top: 45vh; background-color: #85a3e0; } /* Positioning for r4 */
+  #r5 { top: 60vh; background-color: #adc2eb; } /* Positioning for r5 */
+  #r6 { top: 75vh; background-color: #d6e0f5; } /* Positioning for r6 */
+  #r7 { top: 90vh; background-color: #ebf0fa; } /* Positioning for r7 */
+  
+  /* Style for the right-aligned text */
+  .details {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+	position: absolute;
+    right: auto;
+    left: 55%;
+    color: black;
+    font-size: 3.5em;
+	font-family: 'Viner Hand ITC', cursive; /* Added font-family for better readability */
+	text-align: center;
+	transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
   }
-  #ribbon1 { top: 0; background-color: darkgreen; } /* Positioning for ribbon1 at top */
-  #ribbon2 { top: 10vh; background-color: #ff9900; } /* Positioning for ribbon2 */
-  #ribbon3 { top: 20vh; background-color: #ffaa00; } /* Positioning for ribbon3 */
-  #ribbon4 { top: 30vh; background-color: #ffbb00; } /* Positioning for ribbon4 */
-  #ribbon5 { top: 40vh; background-color: #ffcc00; } /* Positioning for ribbon5 */
-  #ribbon6 { top: 50vh; background-color: #ffdd00; } /* Positioning for ribbon6 */
-  #ribbon7 { top: 60vh; background-color: #ffee00; } /* Positioning for ribbon7 */
-  #ribbon8 { top: 70vh; background-color: #ffff00; } /* Positioning for ribbon8 */
-  #ribbon9 { top: 80vh; background-color: #ffff80; } /* Positioning for ribbon9 */
-  #ribbon10 { top: 90vh; background-color: darkgreen; } /* Positioning for ribbon10 */
+  #upper:hover {
+    text-shadow: 0 0 10px white; /* Glow effect on hover */
+  }
+  /* Style for the second right-aligned text */
+  .lclass {
+    font-size: 1.2rem; /* Updated font size */
+    font-family: Arial, sans-serif; /* Changed font to Arial */
+  }
+  
+  #d1{
+    height: 60vh;
+	text-align: left;
+	display: none; /* Hide the rightText division initially */
+  }
+  ul.b {list-style-type: circle;}
 </style>
 </head>
 <body>
-  <div id="blueDivision" class="coloredDivision">
+  <div id="initial" class="coloredDivision">
     <div id="photoHolder">
-      <img src="Media/Pictures/Safiur_Photo.jpg" alt="Profile Picture">
+      <img src="Media/Pictures/DSC_6960 Edited_1.jpg" alt="Profile Picture" onclick="decreaseSize()">
     </div>
   </div>
-  <div id="ribbon1" class="coloredDivision ribbonDivision">ribbon1 Division</div>
-  <div id="ribbon2" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Check Change</div>
-  <div id="ribbon3" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Change 2</div>
-  <div id="ribbon4" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Change 3</div>
-  <div id="ribbon5" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">Change 4</div>
-  <div id="ribbon6" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon6</div>
-  <div id="ribbon7" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon7</div>
-  <div id="ribbon8" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon8</div>
-  <div id="ribbon9" class="coloredDivision ribbonDivision" onclick="changeBGColor(this)">ribbon9</div>
-  <div id="ribbon10" class="coloredDivision ribbonDivision">ribbon10</div>
+  <div id="initial-back" class="coloredDivision"></div>
+  <div id="r1" class="coloredDivision rDivision" onclick="changeBGColor(this)">Professional Summary</div>
+  <div id="r2" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 2</div>
+  <div id="r3" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 3</div>
+  <div id="r4" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 4</div>
+  <div id="r5" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 5</div>
+  <div id="r6" class="coloredDivision rDivision" onclick="changeBGColor(this)">Ribbon 6</div>
+  <div id="r7" class="coloredDivision rDivision">I here by declare that all the information furnished above is true to the best of my knowledge and belief</div>
 
+  <!-- Right-aligned text -->
+  <div id="rightText" class="details">
+	<div id="upper">Sk Safiur Rahaman</div>
+    <div id="mid-lower" class="lclass">SAP Lead Technical Consultant</div>
+    <div id="lower" class="lclass"></div>
+  </div>
+  <div id="d1" class="details">
+	<div id="u1">Professional Summary</div>
+    <div id="ml1" class="lclass">Test</div>
+    <div id="l1" class="lclass"><ul class="a">
+  <li>10+ years of experience in SAP technical consulting (ABAP on HANA and ABAP Cloud).</li>
+  <li>Currently working at Capgemini (India), Kolkata, as Manager.</li>
+  <li>Woking on the BTP solutions and fully Fiori Launchpad based business process (Private and Public Cloud).</li>
+  <li>Experienced in S4 HANA Green-field Implementation, Blue-field Implementation, Brown-field Implementations and Support Projects.</li>
+  <li>Motivated team player with sound understanding of the IT industry and willing to accept exciting challenges.</li>
+  <li>Looking forward to meet new challenges in technical as well as functional domain. Very much excited to explore new possibilities for SAP solutions.</li>
+  <li>Good team spirit & willingness to learn new things. Responsible, punctual, committed to work.</li>
+</ul></div>
+  </div>
+  
   <script>
     function changeBGColor(element) {
+	
+	  document.getElementById('r1').style.width = "33%";
       var bgColor = window.getComputedStyle(element).backgroundColor;
       document.body.style.backgroundColor = bgColor;
+	  document.getElementById(element).style.width = "100%";
+    }
+	function decreaseSize() {
+	document.getElementById('initial').style.borderBottomRightRadius = "350px";
+	document.getElementById('initial').style.borderTopRightRadius = "350px";
+	document.getElementById('photoHolder').style.left = "50%";
+	document.getElementById('initial-back').style.width = "32%";
+	document.getElementById('rightText').style.opacity = "0.2";
+	document.getElementById('d1').style.left = "35%";
+	document.getElementById('r1').style.width = "100%";
+	document.getElementById('r7').style.width = "100%";
+	var rightText = document.getElementById('d1');
+	rightText.style.display = "block";
+            
+    var initialDiv = document.getElementById('initial');
+    initialDiv.style.width = '30%';
     }
   </script>
 </body>
