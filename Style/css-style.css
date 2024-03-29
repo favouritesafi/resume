@@ -1,5 +1,4 @@
-<style>
-  body {
+body { 
     margin: 0;
     padding: 0;
     background-color: white;
@@ -126,9 +125,7 @@
       background-color: red;
     }
 
-    .second {
-      background-color: green;
-    }
+    .second { background-color: green; }
 
     .time-value {
       position: absolute;
@@ -153,5 +150,3 @@
     /*margin-right: 10px; */
     border-radius: 50%; /* Makes the holder circular */
 }
-	
-</style>
