@@ -5,7 +5,163 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sk Safiur Rahaman</title>
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel=¨stylesheet¨ type=¨text/css¨ href="Style/css-style.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Arial', cursive; /* Added font-family for better readability */
+    display: flex; /* Added for centering text */
+  }
+  .coloredDivision {
+    position: fixed; /* Fixes the position */
+    top: 0;
+    transition: width 1s, height 1s; /* Adding transition effect */
+    align-items: center; /* Added for centering text */
+    justify-content: center; /* Added for centering text */
+    color: white; /* Added for better contrast */
+    font-size: 1.2em; /* Added font size for better visibility */
+    overflow: hidden; /* Hides overflow content outside the circle */
+  }
+  #initial {
+    background-color: white;
+    width: 50%; /* Full width of the viewport */
+    height: 100vh; /* 100% of viewport height */
+    left: 0;
+    border-top-right-radius: 450px; /* Adjusted the radius */
+    border-bottom-right-radius: 450px; /* Adjusted the radius */
+    z-index: 2; /* Ensure blue division is above r */
+    position: relative; /* Added position relative for absolute positioning of photo holder */
+  }
+  #initial-back { background-color: #14184a;
+    width: 51%; /* Full width of the viewport */
+    height: 100vh; /* 100% of viewport height */
+    border-top-right-radius: 350px; /* Adjusted the radius */
+    border-bottom-right-radius: 350px; /* Adjusted the radius */
+    z-index: 1; /* Ensure blue division is above r */
+    transition: width 3s, height 3s; /* Adding transition effect */
+	}
+  #photoHolder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; /* Makes the holder circular */
+    overflow: hidden; /* Hides overflow content outside the circle */
+    border: 2px solid white; /* Optional: Add border */
+  }
+  #photoHolder img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .rDivision {
+    width: 35%; /* Changed to 35% */
+    height: 10vh; /* 10% of viewport height */
+    left: 0; /* Positioning to left */
+    z-index: 1; /* Ensure r division is behind blue */
+    border-top-right-radius: 400px; /* Adjusted the radius */
+    border-bottom-right-radius: 400px; /* Adjusted the radius */
+    display: flex; /* Added for centering text */
+    align-items: right-aligned; /* Added for centering text */
+    text-align: right; /* Align text to the right */
+    color: #14184a;
+  }
+  .rDivision:not(#r1):hover {
+    width: 55%; /* Expand width to 100% on hover */
+  } 
+  #r1 { top: 0; background-color: #ebf0fa; } /* Positioning for r1 at top */
+  #r2 { top: 15vh; width: 30%; background-color: #d6e0f5; } /* Positioning for r2 */
+  #r3 { top: 30vh; width: 34%; background-color: #adc2eb; } /* Positioning for r3 */
+  #r4 { top: 45vh; background-color: #85a3e0; } /* Positioning for r4 */
+  #r5 { top: 60vh; width: 34%; background-color: #adc2eb; } /* Positioning for r5 */
+  #r6 { top: 75vh; width: 30%; background-color: #d6e0f5; } /* Positioning for r6 */
+  #r7 { top: 90vh; background-color: #ebf0fa; } /* Positioning for r7 */
+  
+  /* Style for the right-aligned text */
+  .details {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    right: auto;
+    left: 55%;
+    color: black;
+    font-size: 3.5em;
+    font-family: 'Viner Hand ITC', cursive; /* Added font-family for better readability */
+    text-align: center;
+    transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
+  }
+  .summaries {
+  display: none; /* Hide the rightText division initially */
+  }
+  
+  #upper:hover {
+    text-shadow: 0 0 10px blue; /* Glow effect on hover */
+  }
+  /* Style for the second right-aligned text */
+  .lclass { font-size: 1.2rem; /* Updated font size */
+            font-family: Arial, sans-serif; /* Changed font to Arial */
+  }
+  
+  #r1d { height: 60vh; text-align: left; }
+	  
+  ul.b { list-style-type: circle; }
+  
+  .clock {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      z-index: 3;
+      position: absolute;
+    }
+
+    .time-unit {
+      position: relative;
+      width: 20px; /* Adjust width as needed */
+      height: 100vh; /* Adjust height as needed */
+      margin: 0 5px; /* Adjust margin as needed */
+      border-bottom-right-radius: 100px; /* Rounded corner for bottom right */
+      border-bottom-left-radius: 100px; /* Rounded corner for bottom left */
+    }
+
+    .hour {
+      background-color: orange;
+    }
+
+    .minute {
+      background-color: red;
+    }
+
+    .second {
+      background-color: green;
+    }
+
+    .time-value {
+      position: absolute;
+      bottom: -40px; /* Adjust bottom position as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px; /* Adjust font size as needed */
+      color: #333;
+      text-align: center; /* Align time values center */
+    }
+.blank_area { top: 25%;
+    position: relative; /* Ensure relative positioning for absolute positioning of text */
+    height: 100%; /* Set the height as needed */
+    width: 80%; /* Set the width as needed */
+    font-weight: bold; /* Make the font bold */
+    font-size: 1.3em; /* Increase the font size */
+     margin-right: 20px;
+}
+.icon_area img { border-radius: 400px:
+    position: absolute;
+    /*top: 50%;*/
+    /*margin-right: 10px; */
+    border-radius: 50%; /* Makes the holder circular */
+}
+	
+</style>
 </head>
 <body>
 	
@@ -70,8 +226,6 @@
     <div id="mid-lower" class="lclass">SAP Lead Technical Consultant</div>
     <div id="lower" class="lclass">ABAP on HANA and ABAP Cloud</div>
   </div>
-<!-- Right-aligned text -->
-	
   <div id="r1d" class="details summaries">
 	<div id="u1">Professional Summary</div>
     <div id="ml1" class="lclass">Test</div>
@@ -98,8 +252,53 @@
   <li>Good team spirit & willingness to learn new things. Responsible, punctual, committed to work.</li>
 </ul></div>
   </div>
-	
-  <script src="Functions/js-function.js"></script>
   
+  <script>
+    function changeBGColor(element) {
+	
+	  document.getElementById('r1').style.width = "33%";
+      var bgColor = window.getComputedStyle(element).backgroundColor;
+      document.body.style.backgroundColor = bgColor;
+	  document.getElementById(element).style.width = "100%";
+    }
+	function decreaseSize() {
+	document.getElementById('initial').style.borderBottomRightRadius = "350px";
+	document.getElementById('initial').style.borderTopRightRadius = "350px";
+	document.getElementById('photoHolder').style.left = "50%";
+	document.getElementById('initial-back').style.width = "32%";
+	document.getElementById('rightText').style.opacity = "0.2";
+	document.getElementById('r1d').style.left = "35%";
+	document.getElementById('r1').style.width = "100%";
+	document.getElementById('r7').style.width = "100%";
+	var rightText = document.getElementById('r1d');
+	rightText.style.display = "block";
+            
+    var initialDiv = document.getElementById('initial');
+    initialDiv.style.width = '30%';
+    }
+	
+	    function updateTime() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Display the time values
+      document.getElementById('hourValue').textContent = hours;
+      document.getElementById('minuteValue').textContent = minutes;
+      document.getElementById('secondValue').textContent = seconds;
+
+      // Adjust the height of each time unit
+      document.querySelector('.hour').style.height = (hours * 15) + 'px'; // Assuming maximum 24 hours
+      document.querySelector('.minute').style.height = (minutes * 6) + 'px'; // Assuming maximum 60 minutes
+      document.querySelector('.second').style.height = (seconds * 6) + 'px'; // Assuming maximum 60 seconds
+    }
+
+    // Update the time every second
+    setInterval(updateTime, 1000);
+
+    // Initial call to display the time immediately
+    updateTime();
+  </script>
 </body>
 </html>
