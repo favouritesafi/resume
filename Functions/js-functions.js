@@ -1,5 +1,4 @@
-<script>
-    function changeBGColor(element) {
+function changeBGColor(element) {
 	
 	  document.getElementById('r1').style.width = "33%";
       var bgColor = window.getComputedStyle(element).backgroundColor;
@@ -44,4 +43,3 @@
 
     // Initial call to display the time immediately
     updateTime();
-  </script>
