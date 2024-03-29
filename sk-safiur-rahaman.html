@@ -5,24 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sk Safiur Rahaman</title>
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
   body {
     margin: 0;
     padding: 0;
     background-color: white;
     font-family: 'Arial', cursive; /* Added font-family for better readability */
-	display: flex; /* Added for centering text */
+    display: flex; /* Added for centering text */
   }
   .coloredDivision {
     position: fixed; /* Fixes the position */
     top: 0;
     transition: width 1s, height 1s; /* Adding transition effect */
     align-items: center; /* Added for centering text */
-    justify-content: right; /* Added for centering text */
+    justify-content: center; /* Added for centering text */
     color: white; /* Added for better contrast */
     font-size: 1.2em; /* Added font size for better visibility */
-	overflow: hidden; /* Hides overflow content outside the circle */
+    overflow: hidden; /* Hides overflow content outside the circle */
   }
   #initial {
     background-color: white;
@@ -40,7 +39,7 @@
     border-top-right-radius: 350px; /* Adjusted the radius */
     border-bottom-right-radius: 350px; /* Adjusted the radius */
     z-index: 1; /* Ensure blue division is above r */
-	transition: width 3s, height 3s; /* Adding transition effect */
+    transition: width 3s, height 3s; /* Adding transition effect */
 	}
   #photoHolder {
     position: absolute;
@@ -57,7 +56,7 @@
     height: auto;
   }
   .rDivision {
-    width: 34%; /* Changed to 37% */
+    width: 34%; /* Changed to 35% */
     height: 10vh; /* 10% of viewport height */
     left: 0; /* Positioning to left */
     z-index: 1; /* Ensure r division is behind blue */
@@ -84,14 +83,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-	position: absolute;
+    position: absolute;
     right: auto;
     left: 55%;
     color: black;
     font-size: 3.5em;
-	font-family: 'Viner Hand ITC', cursive; /* Added font-family for better readability */
-	text-align: center;
-	transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
+    font-family: 'Viner Hand ITC', cursive; /* Added font-family for better readability */
+    text-align: center;
+    transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
   }
   .summaries {
   display: none; /* Hide the rightText division initially */
@@ -101,24 +100,20 @@
     text-shadow: 0 0 10px blue; /* Glow effect on hover */
   }
   /* Style for the second right-aligned text */
-  .lclass {
-    font-size: 1.2rem; /* Updated font size */
-    font-family: Arial, sans-serif; /* Changed font to Arial */
+  .lclass { font-size: 1.2rem; /* Updated font size */
+            font-family: Arial, sans-serif; /* Changed font to Arial */
   }
   
-  #r1d{
-    height: 60vh;
-	text-align: left;
-	  }
+  #r1d { height: 60vh; text-align: left; }
 	  
-  ul.b {list-style-type: circle;}
+  ul.b { list-style-type: circle; }
   
   .clock {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-	  z-index: 3;
-	  position: absolute;
+      z-index: 3;
+      position: absolute;
     }
 
     .time-unit {
@@ -126,7 +121,7 @@
       width: 20px; /* Adjust width as needed */
       height: 100vh; /* Adjust height as needed */
       margin: 0 5px; /* Adjust margin as needed */
-	  border-bottom-right-radius: 100px; /* Rounded corner for bottom right */
+      border-bottom-right-radius: 100px; /* Rounded corner for bottom right */
       border-bottom-left-radius: 100px; /* Rounded corner for bottom left */
     }
 
@@ -151,27 +146,26 @@
       color: #333;
       text-align: center; /* Align time values center */
     }
-	.blank_area {
-	top: 25%;
+.blank_area { top: 25%;
     position: relative; /* Ensure relative positioning for absolute positioning of text */
     height: 100%; /* Set the height as needed */
     width: 80%; /* Set the width as needed */
-	font-weight: bold; /* Make the font bold */
+    font-weight: bold; /* Make the font bold */
     font-size: 1.4em; /* Increase the font size */
-	margin-right: 20px;
+     margin-right: 20px;
 }
-	.icon_area img {
-	border-radius: 400px:
+.icon_area img { border-radius: 400px:
     position: absolute;
-    top: 50%;
-    left: 50%;
-	margin-right: 10px;
+    /*top: 50%;*/
+    /*margin-right: 10px; */
     border-radius: 50%; /* Makes the holder circular */
-	}
+}
+	
 </style>
 </head>
 <body>
-
+	
+<!-- Clock -->
 <div class="clock">
     <div class="time-unit hour">
       <div class="time-value" id="hourValue"></div>
@@ -182,15 +176,21 @@
     <div class="time-unit second">
       <div class="time-value" id="secondValue"></div>
     </div>
-  </div>
-  
+</div>	
+<!-- Clock -->
+  	
+<!-- Left Division : Profile Picture -->
   <div id="initial" class="coloredDivision">
-    <div id="photoHolder">
-      <img src="Media/Pictures/DSC_6960 Edited_1.jpg" alt="Profile Picture" onclick="decreaseSize()">
-    </div>
-  </div>
-  <div id="initial-back" class="coloredDivision"></div>
-  <div id="r1" class="coloredDivision rDivision" onclick="changeBGColor(this)">
+    <div id="photoHolder"><img src="Media/Pictures/DSC_6960 Edited_1.jpg" alt="Profile Picture" onclick="decreaseSize()"></div>
+  </div> 	
+<!-- Left Division : Profile Picture -->
+		
+<!-- Back Division -->
+  <div id="initial-back" class="coloredDivision"></div> 	
+<!-- Back Division -->
+	 	
+<!-- Ribbons -->
+<div id="r1" class="coloredDivision rDivision" onclick="changeBGColor(this)">
   <div id="topText">
 	<div id="upper">Sk Safiur Rahaman</div>
   </div></div>
@@ -217,7 +217,9 @@
   <div id="r7" class="coloredDivision rDivision">
        <div id="dec" class="left_align" width="100%">I here by declare that all the information furnished above is true to the best of my knowledge and belief.</div>
 	   <div id="r1_icon" class="icon_area">Safiur</div>
-  </div>
+  </div> 	
+<!-- Ribbons -->
+
   <!-- Right-aligned text -->
   <div id="rightText" class="details">
 	<div id="upper">Sk Safiur Rahaman</div>
@@ -238,7 +240,7 @@
 </ul></div>
   </div>
     <div id="r2d" class="details summaries">
-	<div id="u1">Career Experience</div>
+	<div id="u1">Skillsets & Certifications</div>
     <div id="ml1" class="lclass">Test</div>
     <div id="l1" class="lclass"><ul class="a">
   <li>10+ years of experience in SAP technical consulting (ABAP on HANA and ABAP Cloud).</li>
@@ -264,18 +266,18 @@
 	document.getElementById('initial').style.borderTopRightRadius = "350px";
 	document.getElementById('photoHolder').style.left = "50%";
 	document.getElementById('initial-back').style.width = "32%";
-	document.getElementById('rightText').style.display = "none";
+	document.getElementById('rightText').style.opacity = "0.2";
 	document.getElementById('r1d').style.left = "35%";
 	document.getElementById('r1').style.width = "100%";
 	document.getElementById('r7').style.width = "100%";
 	var rightText = document.getElementById('r1d');
 	rightText.style.display = "block";
-         
-	var initialDiv = document.getElementById('initial');
+            
+    var initialDiv = document.getElementById('initial');
     initialDiv.style.width = '30%';
     }
 	
-	function updateTime() {
+	    function updateTime() {
       var now = new Date();
       var hours = now.getHours();
       var minutes = now.getMinutes();
