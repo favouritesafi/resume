@@ -11,7 +11,7 @@
     padding: 0;
     background-color: white;
     font-family: 'Arial', cursive; /* Added font-family for better readability */
-	display: flex; /* Added for centering text */
+    display: flex; /* Added for centering text */
   }
   .coloredDivision {
     position: fixed; /* Fixes the position */
@@ -21,6 +21,7 @@
     justify-content: center; /* Added for centering text */
     color: white; /* Added for better contrast */
     font-size: 1.2em; /* Added font size for better visibility */
+    overflow: hidden; /* Hides overflow content outside the circle */
   }
   #initial {
     background-color: white;
@@ -38,7 +39,7 @@
     border-top-right-radius: 350px; /* Adjusted the radius */
     border-bottom-right-radius: 350px; /* Adjusted the radius */
     z-index: 1; /* Ensure blue division is above r */
-	transition: width 3s, height 3s; /* Adding transition effect */
+    transition: width 3s, height 3s; /* Adding transition effect */
 	}
   #photoHolder {
     position: absolute;
@@ -82,14 +83,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-	position: absolute;
+    position: absolute;
     right: auto;
     left: 55%;
     color: black;
     font-size: 3.5em;
-	font-family: 'Viner Hand ITC', cursive; /* Added font-family for better readability */
-	text-align: center;
-	transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
+    font-family: 'Viner Hand ITC', cursive; /* Added font-family for better readability */
+    text-align: center;
+    transition: text-shadow 0.5s; /* Smooth transition for glowing effect */
   }
   .summaries {
   display: none; /* Hide the rightText division initially */
@@ -99,17 +100,13 @@
     text-shadow: 0 0 10px blue; /* Glow effect on hover */
   }
   /* Style for the second right-aligned text */
-  .lclass {
-    font-size: 1.2rem; /* Updated font size */
-    font-family: Arial, sans-serif; /* Changed font to Arial */
+  .lclass { font-size: 1.2rem; /* Updated font size */
+            font-family: Arial, sans-serif; /* Changed font to Arial */
   }
   
-  #r1d{
-    height: 60vh;
-	text-align: left;
-	  }
+  #r1d { height: 60vh; text-align: left; }
 	  
-  ul.b {list-style-type: circle;}
+  ul.b { list-style-type: circle; }
   
   .clock {
       display: flex;
@@ -149,28 +146,27 @@
       color: #333;
       text-align: center; /* Align time values center */
     }
-	.blank_area {
-	top: 25%;
+.blank_area { top: 25%;
     position: relative; /* Ensure relative positioning for absolute positioning of text */
     height: 100%; /* Set the height as needed */
     width: 80%; /* Set the width as needed */
-	font-weight: bold; /* Make the font bold */
+    font-weight: bold; /* Make the font bold */
     font-size: 1.4em; /* Increase the font size */
-	margin-right: 15px;
+    margin-right: 15px;
 }
-	.icon_area img {
-	border-radius: 400px:
+.icon_area img { border-radius: 400px:
     position: absolute;
     top: 50%;
     left: 50%;
-	margin-right: 10px;
+    margin-right: 10px;
     border-radius: 50%; /* Makes the holder circular */
-	}
+}
 	
 </style>
 </head>
 <body>
-
+	
+<!-- Clock -->
 <div class="clock">
     <div class="time-unit hour">
       <div class="time-value" id="hourValue"></div>
@@ -181,7 +177,8 @@
     <div class="time-unit second">
       <div class="time-value" id="secondValue"></div>
     </div>
-  </div>
+</div>	
+<!-- Clock -->
   
   <div id="initial" class="coloredDivision">
     <div id="photoHolder">
@@ -189,7 +186,8 @@
     </div>
   </div>
   <div id="initial-back" class="coloredDivision"></div>
-    <div id="r1" class="coloredDivision rDivision" onclick="changeBGColor(this)">
+	
+<div id="r1" class="coloredDivision rDivision" onclick="changeBGColor(this)">
   <div id="topText">
 	<div id="upper">Sk Safiur Rahaman</div>
   </div></div>
